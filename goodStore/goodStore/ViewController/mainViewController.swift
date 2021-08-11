@@ -11,21 +11,38 @@ import RxSwift
 class mainViewController: UIViewController {
     var disposeBag = DisposeBag()
     
-    let menuArray = ["한식", "중식", "일식", "기타 외식업", "미용업", "목욕업", "세탁업", "영화관람", "숙박업", "VTR 대여", "노래방", "수영∙볼링∙당구∙골프장", "기타 서비스업소"]
+    let menuArray = ["한식", "중식", "일식", "기타 외식업", "미용업", "목욕업", "세탁업", "영화관람", "숙박업", "VTR 대여", "노래방", "수영∙볼링∙당구∙골프장", "기타 서비스업종"]
     
     @IBOutlet weak var upperView: UIImageView!
+    @IBOutlet weak var upperBarView: UIImageView!
     @IBOutlet weak var boardView: UIImageView!
     @IBOutlet weak var boardBGView: UIImageView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var shadowView: UIImageView!
+    
+    @IBOutlet weak var designView1: UIImageView!
+    @IBOutlet weak var designView2: UIImageView!
+    @IBOutlet weak var designView3: UIImageView!
+    @IBOutlet weak var designView4: UIImageView!
+    @IBOutlet weak var designView5: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
+        menuCollectionView.layer.cornerRadius = 20
         
-        upperView.layer.cornerRadius = 10
+        shadowView.layer.cornerRadius = 20
+        shadowView.layer.shadowOpacity = 0.9
+        shadowView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        shadowView.layer.shadowRadius = 20
+        
         boardView.layer.cornerRadius = 15
-        boardBGView.layer.cornerRadius = 20
+        boardView.layer.shadowOpacity = 0.2
+        boardView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        boardView.layer.shadowRadius = 15
+//        boardBGView.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
     }
@@ -63,7 +80,7 @@ extension mainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -76,6 +93,6 @@ extension mainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 20, left: 25, bottom: 10, right: 25)
     }
 }
