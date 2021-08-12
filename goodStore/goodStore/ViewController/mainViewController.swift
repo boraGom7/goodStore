@@ -10,6 +10,7 @@ import RxSwift
 
 class mainViewController: UIViewController {
     var disposeBag = DisposeBag()
+    var selectedIndex: IndexPath?
     
     let menuArray = ["한식", "중식", "일식", "기타 외식업", "미용업", "목욕업", "세탁업", "영화관람", "숙박업", "VTR 대여", "노래방", "수영∙볼링∙당구∙골프장", "기타 서비스업종"]
     
@@ -19,13 +20,6 @@ class mainViewController: UIViewController {
     @IBOutlet weak var boardBGView: UIImageView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var shadowView: UIImageView!
-    
-    @IBOutlet weak var designView1: UIImageView!
-    @IBOutlet weak var designView2: UIImageView!
-    @IBOutlet weak var designView3: UIImageView!
-    @IBOutlet weak var designView4: UIImageView!
-    @IBOutlet weak var designView5: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +40,6 @@ class mainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -76,7 +59,24 @@ extension mainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.menuLabel.autoresizesSubviews = true
         cell.menuLabel.numberOfLines = 0
         
+        if selectedIndex == indexPath {
+            categorySelection.onNext(menuArray[indexPath.row])
+            
+            let listVC = storyboard?.instantiateViewController(identifier: "listID") as! listViewController
+            listVC.modalPresentationStyle = .fullScreen
+            present(listVC, animated: true, completion: nil)
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if selectedIndex != indexPath || selectedIndex == nil {
+          selectedIndex = indexPath
+            menuCollectionView.reloadData()
+        } else {
+          selectedIndex = nil
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -88,7 +88,6 @@ extension mainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! menuCell
         return CGSize(width: (self.view.frame.width - 130)/4, height: self.menuCollectionView.frame.height / 4.5)
     }
     

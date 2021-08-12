@@ -16,6 +16,7 @@
 		0489310726BB812500713625 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489310626BB812500713625 /* mainViewController.swift */; };
 		0489311026BBA33B00713625 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489310F26BBA33B00713625 /* menuCell.swift */; };
 		0489311326BBA4FF00713625 /* openAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489311226BBA4FF00713625 /* openAPI.swift */; };
+		048C2C0726C4A8D600BA3104 /* selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C2C0626C4A8D600BA3104 /* selection.swift */; };
 		04952B7726C226A300C31859 /* listCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04952B7626C226A300C31859 /* listCell.swift */; };
 		04952B7926C227FD00C31859 /* listStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04952B7826C227FD00C31859 /* listStruct.swift */; };
 		67A662F817934A168DF0CC0E /* Pods_goodStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FE26E1BD216C9E3F6387B7 /* Pods_goodStore.framework */; };
@@ -33,6 +34,7 @@
 		0489310626BB812500713625 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		0489310F26BBA33B00713625 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
 		0489311226BBA4FF00713625 /* openAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openAPI.swift; sourceTree = "<group>"; };
+		048C2C0626C4A8D600BA3104 /* selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selection.swift; sourceTree = "<group>"; };
 		04952B7626C226A300C31859 /* listCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listCell.swift; sourceTree = "<group>"; };
 		04952B7826C227FD00C31859 /* listStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listStruct.swift; sourceTree = "<group>"; };
 		57FE26E1BD216C9E3F6387B7 /* Pods_goodStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goodStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 				04952B7626C226A300C31859 /* listCell.swift */,
 				04952B7826C227FD00C31859 /* listStruct.swift */,
 				0489310F26BBA33B00713625 /* menuCell.swift */,
+				048C2C0626C4A8D600BA3104 /* selection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				04952B7926C227FD00C31859 /* listStruct.swift in Sources */,
 				04952B7726C226A300C31859 /* listCell.swift in Sources */,
 				0482F0B526BD0016006CF0D3 /* listViewController.swift in Sources */,
+				048C2C0726C4A8D600BA3104 /* selection.swift in Sources */,
 				0489311026BBA33B00713625 /* menuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
