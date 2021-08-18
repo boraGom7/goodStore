@@ -10,6 +10,7 @@ import RxSwift
 
 class listViewController: UIViewController {
     var disposeBag = DisposeBag()
+    var selectedIndex: IndexPath?
     
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var backButton: UIButton!
@@ -59,7 +60,25 @@ extension listViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.storeImage.layer.cornerRadius = 10
         cell.storeName.text = "storeName"
         cell.storeDiscription.text = "abcdefghijklmnopqrstuwyz"
+        
+        if selectedIndex == indexPath {
+            selectedStore.onNext(cell.storeName.text!)
+            
+            let detailVC = storyboard?.instantiateViewController(identifier: "detailID") as! detailViewController
+            detailVC.modalPresentationStyle = .fullScreen
+            present(detailVC, animated: true, completion: nil)
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if selectedIndex != indexPath || selectedIndex == nil {
+          selectedIndex = indexPath
+            listCollectionView.reloadData()
+        } else {
+          selectedIndex = nil
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

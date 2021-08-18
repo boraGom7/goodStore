@@ -9,6 +9,12 @@ import UIKit
 import RxSwift
 
 var categorySelection = BehaviorSubject<String>(value: "")
+var selectedStore = BehaviorSubject<String>(value: "")
+var selectedDescription = BehaviorSubject<String>(value: "")
+var selectedAddress = BehaviorSubject<String>(value: "")
+var selectedWay = BehaviorSubject<String>(value: "")
+var selectedNumber = BehaviorSubject<String>(value: "")
+var selectedTime = BehaviorSubject<String>(value: "")
 
 func getEndString(menu: String) -> String {
     switch menu {
