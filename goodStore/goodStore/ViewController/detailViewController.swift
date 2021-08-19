@@ -8,58 +8,58 @@
 import UIKit
 
 class detailViewController: UIViewController {
-
+    @IBOutlet weak var detailTableView: UITableView!
+    
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var bottomImage: UIImageView!
-    @IBOutlet weak var pageControl: UIPageControl!
     
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .white
-        return scrollView
-    }()
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var prideLabel: UILabel!
     
-    let contentsView: UIView = {
-        let contentsView = UIView()
-        contentsView.backgroundColor = .white
-        return contentsView
-    }()
+    let titleArray = ["주소", "전화번호", "찾아오시는 길", "영업시간", "좌석수", "휴무일", "배달", "예약", "카드", "주차", "홈페이지 주소", "전자우편주소"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
         
-
-//        contentsView.addSubview(detailContent().storeName)
-//        contentsView.addSubview(detailContent().description)
-//        contentsView.addSubview(detailContent().address)
-//        contentsView.addSubview(detailContent().way)
-//        contentsView.addSubview(detailContent().number)
-//        contentsView.addSubview(detailContent().time)
-        scrollView.addSubview(contentsView)
-        self.view.addSubview(scrollView)
-        
-        autoLayoutScrollView()
-    }
-    
-    func autoLayoutScrollView() {
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        scrollView.topAnchor.constraint(equalTo: storeImage.bottomAnchor, constant: 0).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomImage.topAnchor, constant: 0).isActive = true
-        
-        contentsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0).isActive = true
-        contentsView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0).isActive = true
-        contentsView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive = true
-        contentsView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0).isActive = true
-        contentsView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 2).isActive = true
-        contentsView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1).isActive = true
-        
-//        detailContent().storeName.leadingAnchor.constraint(equalTo: contentsView.leadingAnchor, constant: 20).isActive = true
-//        detailContent().storeName.topAnchor.constraint(equalTo: contentsView.bottomAnchor, constant: 20).isActive = true
-//        detailContent().storeName.trailingAnchor.constraint(equalTo: contentsView.trailingAnchor, constant: 500).isActive = true
     }
 
 }
 
+extension detailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "가게 정보"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerView = view as? UITableViewHeaderFooterView
+        headerView?.contentView.backgroundColor = .white
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titleArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! detailCell
+        cell.infoLabel.textColor = UIColor(red: 1/255, green: 1/255, blue: 1/255, alpha: 1)
+        
+        cell.titleLabel.text = titleArray[indexPath.item]
+        cell.infoLabel.text = "테스트 테스트 테스트 12 34 테스트 테스트 123"
+        
+        return cell
+    }
+    
+    
+}

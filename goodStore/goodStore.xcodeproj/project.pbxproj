@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0482F0B526BD0016006CF0D3 /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482F0B426BD0016006CF0D3 /* listViewController.swift */; };
+		0484CA3B26CE2E30007EDA87 /* detailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484CA3A26CE2E30007EDA87 /* detailCell.swift */; };
 		0484CF5A26CBA0B200BD097F /* detailViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF5926CBA0B200BD097F /* detailViewContents.swift */; };
 		048930EF26BB7C0800713625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048930EE26BB7C0800713625 /* AppDelegate.swift */; };
 		048930F126BB7C0800713625 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048930F026BB7C0800713625 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		0482F0B426BD0016006CF0D3 /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
+		0484CA3A26CE2E30007EDA87 /* detailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell.swift; sourceTree = "<group>"; };
 		0484CF5926CBA0B200BD097F /* detailViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewContents.swift; sourceTree = "<group>"; };
 		048930EB26BB7C0800713625 /* goodStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048930EE26BB7C0800713625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				04952B7826C227FD00C31859 /* listStruct.swift */,
 				0489310F26BBA33B00713625 /* menuCell.swift */,
 				048C2C0626C4A8D600BA3104 /* selection.swift */,
+				0484CA3A26CE2E30007EDA87 /* detailCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				0484CF5A26CBA0B200BD097F /* detailViewContents.swift in Sources */,
 				048C2C0A26C4EB8900BA3104 /* detailViewController.swift in Sources */,
 				0489310726BB812500713625 /* mainViewController.swift in Sources */,
+				0484CA3B26CE2E30007EDA87 /* detailCell.swift in Sources */,
 				04952B7926C227FD00C31859 /* listStruct.swift in Sources */,
 				04952B7726C226A300C31859 /* listCell.swift in Sources */,
 				0482F0B526BD0016006CF0D3 /* listViewController.swift in Sources */,
