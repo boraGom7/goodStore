@@ -11,6 +11,7 @@ class listCell: UICollectionViewCell {
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var storePride: UILabel!
+    @IBOutlet weak var storeRCM: UILabel!
     @IBOutlet weak var listBGView: UIImageView!
 
 }

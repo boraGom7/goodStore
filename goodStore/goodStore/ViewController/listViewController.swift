@@ -11,6 +11,7 @@ import RxSwift
 class listViewController: UIViewController {
     var disposeBag = DisposeBag()
     var selectedIndex: IndexPath?
+
     
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var backButton: UIButton!
@@ -59,7 +60,8 @@ extension listViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.listBGView.layer.cornerRadius = 10
         cell.storeImage.layer.cornerRadius = 10
         cell.storeName.text = "storeName"
-        cell.storePride.text = "주변보다 저렴한 가격으로 서비스하며 어르신 파마와 커트 시 할인해주는 업소, 주변 평균가격(25000원)보다 20% 저렴한 업소로 6년동안 동일가격 유지"
+        cell.storePride.text = "5km"
+        
         
         if selectedIndex == indexPath {
             selectedStore.onNext(cell.storeName.text!)
@@ -84,16 +86,10 @@ extension listViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! listCell
         
-        let width = self.view.bounds.width
-        let estimateHeight = width/3
+        let width = self.view.bounds.width - 40
+        let estimateHeight = width/4
         
-        cell.storePride.numberOfLines = 0
-        cell.storePride.lineBreakMode = .byWordWrapping
-        
-        let estimateSize = cell.systemLayoutSizeFitting(CGSize(width: width, height: UIView.layoutFittingExpandedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
-        cell.layoutIfNeeded()
-        
-        return CGSize(width: width-40, height: estimateSize.height)
+        return CGSize(width: width, height: estimateHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

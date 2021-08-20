@@ -12,6 +12,7 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var bottomImage: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var prideLabel: UILabel!
@@ -24,7 +25,16 @@ class detailViewController: UIViewController {
         detailTableView.delegate = self
         detailTableView.dataSource = self
         
+        detailTableView.layer.borderWidth = 2
+        detailTableView.layer.borderColor = UIColor(red: 102/255, green: 66/255, blue: 40/255, alpha: 1).cgColor
+        
+        detailTableView.layer.cornerRadius = 10
     }
+    
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
 
@@ -35,7 +45,7 @@ extension detailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 50
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
