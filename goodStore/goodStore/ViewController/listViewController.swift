@@ -11,7 +11,6 @@ import RxSwift
 class listViewController: UIViewController {
     var disposeBag = DisposeBag()
     var selectedIndex: IndexPath?
-
     
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var backButton: UIButton!
@@ -26,6 +25,8 @@ class listViewController: UIViewController {
         listCollectionView.delegate = self
         listCollectionView.dataSource = self
         
+        
+        
         goMap.layer.cornerRadius = 10
         
         categorySelection.subscribe(onNext: { menu in
@@ -33,7 +34,9 @@ class listViewController: UIViewController {
                 self.category.text = menu
             }
             
-            openAPI().response(endString: getEndString(menu: menu))
+            openAPI().response(endString: getEndString(menu: menu), completion: { response in
+                print("response \(response)")
+            })
         }).disposed(by: disposeBag)
     }
     

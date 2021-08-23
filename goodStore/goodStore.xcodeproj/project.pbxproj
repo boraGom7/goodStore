@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046A177226D3456D007A9CC3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A177126D3456D007A9CC3 /* DataModel.swift */; };
+		046A177626D3772D007A9CC3 /* GPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A177526D3772D007A9CC3 /* GPError.swift */; };
 		0482F0B526BD0016006CF0D3 /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482F0B426BD0016006CF0D3 /* listViewController.swift */; };
 		0484CA3B26CE2E30007EDA87 /* detailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484CA3A26CE2E30007EDA87 /* detailCell.swift */; };
 		0484CF5A26CBA0B200BD097F /* detailViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484CF5926CBA0B200BD097F /* detailViewContents.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046A177126D3456D007A9CC3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		046A177526D3772D007A9CC3 /* GPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPError.swift; sourceTree = "<group>"; };
 		0482F0B426BD0016006CF0D3 /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
 		0484CA3A26CE2E30007EDA87 /* detailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell.swift; sourceTree = "<group>"; };
 		0484CF5926CBA0B200BD097F /* detailViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewContents.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				0489311226BBA4FF00713625 /* openAPI.swift */,
+				046A177126D3456D007A9CC3 /* DataModel.swift */,
+				046A177526D3772D007A9CC3 /* GPError.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -275,9 +281,11 @@
 				0489311326BBA4FF00713625 /* openAPI.swift in Sources */,
 				048930EF26BB7C0800713625 /* AppDelegate.swift in Sources */,
 				048930F126BB7C0800713625 /* SceneDelegate.swift in Sources */,
+				046A177626D3772D007A9CC3 /* GPError.swift in Sources */,
 				0484CF5A26CBA0B200BD097F /* detailViewContents.swift in Sources */,
 				048C2C0A26C4EB8900BA3104 /* detailViewController.swift in Sources */,
 				0489310726BB812500713625 /* mainViewController.swift in Sources */,
+				046A177226D3456D007A9CC3 /* DataModel.swift in Sources */,
 				0484CA3B26CE2E30007EDA87 /* detailCell.swift in Sources */,
 				04952B7926C227FD00C31859 /* listStruct.swift in Sources */,
 				04952B7726C226A300C31859 /* listCell.swift in Sources */,
